@@ -2,7 +2,7 @@ import os
 import pickle
 import numpy as np
 
-# ログ設定（標準出力＋ログファイルに同時出力）
+# write log
 class Tee(object):
     def __init__(self, *files):
         self.files = files
@@ -15,7 +15,8 @@ class Tee(object):
             f.flush()
 
 # log path
-log_dir = '/path/to/log'
+workdir = '/your/directory/path'
+log_dir = f'{workdir}/cluster.log'
 os.makedirs(log_dir, exist_ok=True)
 log_path = os.path.join(log_dir, 'cluster.log')
 logfile = open(log_path, 'w')
