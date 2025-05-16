@@ -57,7 +57,7 @@ def main():
 
     workdir = '/your/directory/path'
     WUPPATH = f'{workdir}/WUP2018_300k_2010.txt'
-    OUTPATH = f'{workdir}/cityclrd0000.gl5'
+    OUTPATH = f'{workdir}/city_center.gl5'
 
     tmpfile = np.zeros((n0y, n0x))
 
