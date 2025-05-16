@@ -2,6 +2,25 @@ import os
 import pickle
 import numpy as np
 
+# ログ設定（標準出力＋ログファイルに同時出力）
+class Tee(object):
+    def __init__(self, *files):
+        self.files = files
+    def write(self, obj):
+        for f in self.files:
+            f.write(obj)
+            f.flush()
+    def flush(self):
+        for f in self.files:
+            f.flush()
+
+# log path
+log_dir = '/path/to/log'
+os.makedirs(log_dir, exist_ok=True)
+log_path = os.path.join(log_dir, 'cluster.log')
+logfile = open(log_path, 'w')
+sys.stdout = Tee(sys.stdout, logfile)
+
 def clustering(index, save_dict):
 
     #---------------------------------------------------------------
@@ -313,6 +332,7 @@ def check():
 #-----------------------------------------------------------------------
 
 if __name__ == '__main__':
-    #main()
-    summarize()
+    main()
+    logfile.close()
+    #summarize()
     #check()
