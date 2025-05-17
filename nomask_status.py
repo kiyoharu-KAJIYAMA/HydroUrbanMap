@@ -7,8 +7,8 @@ def open_text(path):
     return data
 
 def nomsk_check():
-    cama_dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity'
-    cama_txt = f"{cama_dir}/dat/cty_lst_/create_text/camacity_first.txt"
+    workdir = '/your/directory/path'
+    cama_txt = f"{workdir}/table_first.txt"
 
     cama = open_text(cama_txt)
 
@@ -26,10 +26,10 @@ def nomsk_check():
     return nomsk_cities
 
 def cluster_judge(nomsk_cities):
-    # ここでやりたいこと
-    # initが小さすぎるやつはNoMASKではじく
-    # maskが1か2のやつはlow_msk_に保存
-    # maskが3以上のやつcty_msk_に保存
+    # conditions
+    # 1. if initial grid cell has less population than 300 -> NoMASK
+    # 2. Classify city masks with 1 or 2 grid cells into low_msk_ directory
+    # 3. Save city masks with more than 3 grid cells to cty_msk_ direcotry
     textpath = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity/dat/cty_lst_/cluster_rejudge.txt'
     save_dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity/dat'
 
@@ -38,8 +38,7 @@ def cluster_judge(nomsk_cities):
     mingrid = 3
 
     for index in nomsk_cities:
-        root_dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/global_city'
-        load_path = f'{root_dir}/dat/dwn_twn_/city_{index:08}.pickle'
+        load_path = f'{workdir}dwn_twn_/city_{index:08}.pickle'
         with open(load_path, 'rb') as file:
             load_dict = pickle.load(file)
 
@@ -61,7 +60,7 @@ def cluster_judge(nomsk_cities):
                     print(index, 'SMALL')
                     flag = 'SMALL'
                     bestmask = load_dict['mask']
-                    save_path = f'{save_dir}/low_msk_/city_kj_{index:08}.gl5'
+                    save_path = f'{workdir}/low_msk_/city_kj_{index:08}.gl5'
                     bestmask.astype(np.float32).tofile(save_path)
                 else:
                     print(index, 'SMALL')
@@ -76,7 +75,7 @@ def cluster_judge(nomsk_cities):
                 flag = 'VALID'
                 target_index = len(valid_track) - 1
                 bestmask = load_dict['mask'][:, :, target_index]
-                save_path = f'{save_dir}/cty_msk_/city_kj_{index:08}.gl5'
+                save_path = f'{workdir}/cty_msk_/city_kj_{index:08}.gl5'
                 bestmask.astype(np.float32).tofile(save_path)
 
         if index == nomsk_cities[0]:
