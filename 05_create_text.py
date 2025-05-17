@@ -17,15 +17,13 @@ import numpy as np
 #########################################################
 
 def main():
-    cama_dir    = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity'
-    wup_path    = f"{cama_dir}/dat/cty_lst_/wup_vs_vldcty.txt"
-    full_path   = f"{cama_dir}/dat/cty_lst_/result_downtown_100percent.txt"
-    dwnflg_path = f"{cama_dir}/dat/cty_lst_/cluster_result.txt"
-    ovlflg_path = f"{cama_dir}/dat/cty_lst_/vld_cty_overlap.txt"
-    save_path   = f"{cama_dir}/dat/cty_lst_/camacity_first.txt"
-
-    glob_dir    = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/global_city'
-    latlon_path = f"{glob_dir}/dat/cty_lst_/gpw4/WUP2018_300k_2010_regionadded.txt"
+    workdir    = '/your/directory/path'
+    wup_path    = f"{wordir}/wup_vs_vldcty.txt"
+    full_path   = f"{workdir}/result_downtown_100percent.txt"
+    dwnflg_path = f"{workdir}/cluster_result.txt"
+    ovlflg_path = f"{workdir}/vld_cty_overlap.txt"
+    latlon_path = f"{workdir}WUP2018_300k_2010.txt"
+    save_path   = f"{cama_dir}/camacity_first.txt"
 
     wup = open_text(wup_path)
     full = open_text(full_path)
