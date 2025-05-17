@@ -23,7 +23,7 @@ def main():
     dwnflg_path = f"{workdir}/cluster_result.txt"
     ovlflg_path = f"{workdir}/vld_cty_overlap.txt"
     latlon_path = f"{workdir}WUP2018_300k_2010.txt"
-    save_path   = f"{cama_dir}/camacity_first.txt"
+    save_path   = f"{cama_dir}/table_first.txt"
 
     wup = open_text(wup_path)
     full = open_text(full_path)
