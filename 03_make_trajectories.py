@@ -19,12 +19,12 @@ def explore_citymask(index, err_count):
     # h08 directory
     workdir = '/your/directory/path'
     wup_path = f'{workdir}/WUP2018_300k_2010.txt'
-    area_path = f'{workdir}/lndara.{MAP}.gl5'
+    area_path = f'{workdir}/grdara.gl5'
     pop_path = f'{workdir}/GPW4ag__20100000.gl5'
     center_path = f'{workdir}/cty_cnt_/{POP}/city_{index:08d}.gl5'
     modified_center_path = f'{workdir}/cty_cnt_/{POP}/modified/city_{index:08d}.gl5'
     new_center_path = f'{workdir}/cty_cnt_/{POP}/modified/city_{index:08d}.gl5'
-    dict_path = f'{workdir}/dwn_twn_/city_{index:08d}.pickle'
+    dict_path = f'{workdir}/clusterd/city_{index:08d}.pickle'
 
     #-----------------------------------------------
     # Input Constants
