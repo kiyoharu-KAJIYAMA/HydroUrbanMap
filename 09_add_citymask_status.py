@@ -30,15 +30,14 @@ def cluster_judge(nomsk_cities):
     # 1. if initial grid cell has less population than 300 -> NoMASK
     # 2. Classify city masks with 1 or 2 grid cells into low_msk_ directory
     # 3. Save city masks with more than 3 grid cells to cty_msk_ direcotry
-    textpath = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity/dat/cty_lst_/cluster_rejudge.txt'
-    save_dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity/dat'
+    textpath = f'{workdir}/cluster_rejudge.txt'
 
     threshold = 100
     mininit = 300
     mingrid = 3
 
     for index in nomsk_cities:
-        load_path = f'{workdir}dwn_twn_/city_{index:08}.pickle'
+        load_path = f'{workdir}/dwn_twn_/city_{index:08}.pickle'
         with open(load_path, 'rb') as file:
             load_dict = pickle.load(file)
 
