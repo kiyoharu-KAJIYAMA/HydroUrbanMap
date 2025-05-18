@@ -50,13 +50,13 @@ def explore(city_num, save_flag=False):
     rivnxl_path = f"{workdir}/rivnxl.CAMA.gl5"
     cnt_path = f"{workdir}/cty_cnt_mod/city_{city_num:08}{SUF}"
     nonprf_path = f"{workdir}/nonprf_flag.txt"
-    prf_path = f"{workdir}/cty_prf_/prf_clrd0000{SUF}"
+    prf_path = f"{workdir}/inlet_clrd0000{SUF}"
     updown_path = f"{workdir}/prf_updw/city_{city_num:08}{SUF}"
-    msk_path = f"{workdir}/cty_msk_/city_clrd0000{SUF}"
+    msk_path = f"{workdir}/city_clrd0000{SUF}"
 
     # check if directories exist in dat/cty_int/
-    savepath = f"{cama_dir}/dat/cty_aqd_/{distance_condition}km_elevation/city_{city_num:08}{SUF}"
-    displaypath = f'{cama_dir}/dat/cty_aqd_/fig_{distance_condition}km_elevation/intake_display_{city_num:08}{SUF}'
+    savepath = f"{workdir}/{distance_condition}km_elevation/city_{city_num:08}{SUF}"
+    displaypath = f'{workdir}/dat/cty_aqd_/fig_{distance_condition}km_elevation/intake_display_{city_num:08}{SUF}'
 
 #----------------------------------------------------------------------------------------
 #   Whether valid mask or not
