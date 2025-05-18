@@ -27,8 +27,8 @@ def nxtl2nxtxy(rgnfile, upperindex, leftindex):
 
 def exeption_rivergrid(city_num, riv_nxlonlat_cropped):
     # coord of purficication
-    root_dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/global_city'
-    prf_path = f"{root_dir}/dat/cty_prf_/vld_cty_/city_{city_num:08}.gl5"
+    workdir = '/your/directory/path'
+    prf_path = f"{workdir}/cty_prf_/vld_cty_/city_{city_num:08}.gl5"
         
     prf = np.fromfile(prf_path, dtype='float32').reshape(2160, 4320)
     prf_coords = np.where(prf == 1)
