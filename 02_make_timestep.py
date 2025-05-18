@@ -341,7 +341,7 @@ def explore_citymask(index, err_count):
 
     """
     # result path save
-    resultpath = h08dir + f'/dat/cty_lst_/{POP}/result_downtown.txt'
+    resultpath = f'{workdir}/result_downtown.txt'
 
     if index == 1:
         with open(resultpath, 'w') as file:
@@ -351,7 +351,7 @@ def explore_citymask(index, err_count):
             file.write(f"{index}| {city_name}| {best_masked_pop}| {un_pop}| {best_coverage}| {grid_num}| {err_flag}\n")
 
     # binary file saved (latest version)
-    maskpath_bin = h08dir + f'/dat/cty_msk_/{POP}/city_{index:08}.gl5'
+    maskpath_bin = f'{workdir}/cty_msk_/city_{index:08}.gl5'
     best_mask.astype(np.float32).tofile(maskpath_bin)
 
     # dict save
@@ -372,13 +372,13 @@ def summarize():
     POP = 'gpw4'
 
     # paths
-    h08dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/global_city'
-    wup_path = f'{h08dir}/dat/cty_lst_/{POP}/WUP2018_300k_2010.txt'
-    color_path = f"{h08dir}/dat/cty_msk_/{POP}/city_clrd0000.gl5"
-    monochrome_path = f"{h08dir}/dat/cty_msk_/{POP}/city_00000000.gl5"
-    ovlp_color_path = f"{h08dir}/dat/cty_msk_/{POP}/city_clrdovlp.gl5"
-    ovlp_monochrome_path = f"{h08dir}/dat/cty_msk_/{POP}/city_0000ovlp.gl5"
-    textpath = h08dir + f'/dat/cty_lst_/{POP}/citymask_overlap.txt'
+    workdir = '/your/directory/path'
+    wup_path = f'{workdir}/WUP2018_300k_2010.txt'
+    color_path = f"{workdir}/cty_msk_/city_clrd0000.gl5"
+    monochrome_path = f"{workdir}cty_msk_/city_00000000.gl5"
+    ovlp_color_path = f"{workdir}/cty_msk_/city_clrdovlp.gl5"
+    ovlp_monochrome_path = f"{workdir}/cty_msk_/city_0000ovlp.gl5"
+    textpath = h08dir + f'{workdir}/citymask_overlap.txt'
 
     # city_name
     name_list =  []
@@ -410,7 +410,7 @@ def summarize():
         city_pop = pop_list[index-1]
 
         # load city mask
-        mask_path = f"{h08dir}/dat/cty_msk_/{POP}/city_{index:08}.gl5"
+        mask_path = f"{workdir}/cty_msk_/city_{index:08}.gl5"
 
         # mask existance
         if not os.path.exists(mask_path):
