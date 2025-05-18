@@ -84,8 +84,8 @@ def save_binary(filename, data):
 
 
 if __name__ == '__main__':
-    n0x = 43200
-    n0y = 21600
+    n0x = 4320
+    n0y = 2160
     p0lonmin = -180
     p0lonmax = 180
     p0latmin = -90
