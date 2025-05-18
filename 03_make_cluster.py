@@ -199,8 +199,8 @@ def main():
         print(f"--------------------------------------------------------------")
 
     # paths
-    rootdir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/global_city'
-    save_path = f'{rootdir}/dat/vld_cty_/city_00000000.pickle'
+    workdir = '/your/directory/path'
+    save_path = f'{workdir}/vld_cty_/city_00000000.pickle'
 
     # dict save
     with open(save_path, 'wb') as handle:
@@ -311,7 +311,7 @@ def check():
 
     # paths
     workdir = '/your/directory/path'
-    save_path = f'{workdir}/dat/vld_cty_/city_00000000.pickle'
+    save_path = f'{workdir}/vld_cty_/city_00000000.pickle'
 
     with open(save_path, 'rb') as file:
         save_dict = pickle.load(file)
@@ -320,7 +320,7 @@ def check():
 
     for index in range(1600, 1861):
         if index not in invalid_index:
-            mask_path = f'{rootdir}/dat/vld_cty_/city_{index:08d}.gl5'
+            mask_path = f'{workdir}/vld_cty_/city_{index:08d}.gl5'
             print(f"index: {index}")
             print(f"gradient: {save_dict['gradient'][index-1]}")
             print(f"mask_num: {save_dict['mask_num'][index-1]}")
