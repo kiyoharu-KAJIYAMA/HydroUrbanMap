@@ -309,8 +309,8 @@ def updown_stream(city_num, riv_nxlonlat_cropped):
     # step1: get river paths of all prf grids
     # step2: check if grid is not on that path
     # coord of purficication
-    cama_dir = '/mnt/c/Users/tsimk/Downloads/dotfiles/h08/camacity'
-    prf_path = f"{cama_dir}/dat/cty_prf_/prf_clrd0000.gl5"
+    workdir = '/your/directory/path'
+    prf_path = f"{workdir}/cty_prf_/prf_clrd0000.gl5"
     prf = np.fromfile(prf_path, dtype='float32').reshape(2160, 4320)
     prf_coords = np.where(prf==city_num)
     print(f'citynum: {city_num}, coord of prfs: {prf_coords}')
