@@ -261,7 +261,16 @@ This script generates a global raster file showing all valid urban masks used in
 ### `11_make_city_water_inlet_outlet.py`
 
 **Description**:  
-This script detects the major **intake (inlet)** and **outlet (sewage)** points of urban water infrastructure for each city. It analyzes hydrological variables such as elevation, river catchment area, and flow direction using a 24×24 grid surrounding each city. Cities without valid masks or main rivers are flagged in the output log.
+This script detects the major **intake (inlet)** and **outlet (sewage)** points of urban water infrastructure for each city. It analyzes hydrological variables such as elevation, river catchment area, and flow direction. 
+
+This script handles the loading and preprocessing of CAMA-Flood river network data at 5 arc-minute resolution. These data include river flow direction, catchment area, and next-cell coordinates, all required for hydrological network analysis.
+The dataset referred to as "CAMA" (Catchment-based Macro-scale Floodplain model) can be obtained by accessing the following website and contacting the developer, **Dr. Dai Yamazaki**, for download permission:
+
+> https://hydro.iis.u-tokyo.ac.jp/~yamadai/cama-flood/
+
+Please choose the **5 min resolution** dataset.
+
+Cities without valid masks or main rivers are flagged in the output log.
 
 The resulting binary files mark key urban water infrastructure locations, which are critical for assessing water vulnerability and aqueduct dependencies in HydroUrbanMap.
 
