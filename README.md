@@ -1,3 +1,17 @@
+## Code for the paper
+
+This repository provides the code used to develop HydroUrbanMap (HUM), a global gridded dataset of city boundaries for urban water resource assessment.
+
+The code is associated with the following paper:
+
+**City boundaries for global urban water scarcity assessment**
+
+Kiyoharu Kajiyama, Naota Hanasaki, and Shinjiro Kanae
+
+*Scientific Data*, 2026
+
+DOI: https://doi.org/10.1038/s41597-026-06933-w
+
 # HydroUrbanMap
 
 This repository contains scripts for constructing the **HydroUrbanMap**, a global dataset that links urban water intake and sewage discharge points to river networks based on hydrological and topographical data.
